@@ -20,14 +20,18 @@ import numpy as np
 import random
 import sys
 
-path = get_file('nietzsche.txt', origin="https://s3.amazonaws.com/text-datasets/nietzsche.txt")
+
+
+path = 'trumptweets.txt'
 text = open(path).read().lower()
+
 print('corpus length:', len(text))
 
 chars = sorted(list(set(text)))
 print('total chars:', len(chars))
 char_indices = dict((c, i) for i, c in enumerate(chars))
 indices_char = dict((i, c) for i, c in enumerate(chars))
+# print(text)
 
 # cut the text in semi-redundant sequences of maxlen characters
 maxlen = 40
